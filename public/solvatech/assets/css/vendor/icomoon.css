@@ -1,0 +1,151 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../../fonts/icomoon/icomoon.eot');
+    src: url('../../fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+      url('../../fonts/icomoon/icomoon.ttf') format('truetype'),
+      url('../../fonts/icomoon/icomoon.woff') format('woff'),
+      url('../../fonts/icomoon/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"],
+  [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-search:before {
+    content: "\e900";
+  }
+  
+  .icon-consulting:before {
+    content: "\e901";
+  }
+  
+  .icon-new-product:before {
+    content: "\e902";
+  }
+  
+  .icon-chip:before {
+    content: "\e903";
+  }
+  
+  .icon-web-development:before {
+    content: "\e904";
+  }
+  
+  .icon-protection:before {
+    content: "\e905";
+  }
+  
+  .icon-analysis:before {
+    content: "\e906";
+  }
+  
+  .icon-right-quote:before {
+    content: "\e907";
+  }
+  
+  .icon-cloud:before {
+    content: "\e908";
+  }
+  
+  .icon-dashboard:before {
+    content: "\e909";
+  }
+  
+  .icon-group:before {
+    content: "\e90a";
+  }
+  
+  .icon-system:before {
+    content: "\e90b";
+  }
+  
+  .icon-cloud-data:before {
+    content: "\e90c";
+  }
+  
+  .icon-data-visualization:before {
+    content: "\e90d";
+  }
+  
+  .icon-web-design:before {
+    content: "\e90e";
+  }
+  
+  .icon-software-engineer:before {
+    content: "\e90f";
+  }
+  
+  .icon-smart-tv:before {
+    content: "\e910";
+  }
+  
+  .icon-link:before {
+    content: "\e911";
+  }
+  
+  .icon-technical-support:before {
+    content: "\e912";
+  }
+  
+  .icon-cctv:before {
+    content: "\e913";
+  }
+  
+  .icon-coding:before {
+    content: "\e914";
+  }
+  
+  .icon-apple:before {
+    content: "\e915";
+  }
+  
+  .icon-android:before {
+    content: "\e916";
+  }
+  
+  .icon-iot:before {
+    content: "\e917";
+  }
+  
+  .icon-smartband:before {
+    content: "\e918";
+  }
+  
+  .icon-tv:before {
+    content: "\e919";
+  }
+  
+  .icon-phone-ringing:before {
+    content: "\e91a";
+  }
+  
+  .icon-right-arrow:before {
+    content: "\e91b";
+  }
+  
+  .icon-up-arrow:before {
+    content: "\e91c";
+  }
+  
+  .icon-left-arrow:before {
+    content: "\e91d";
+  }
+  
+  .icon-down-arrow:before {
+    content: "\e91e";
+  }

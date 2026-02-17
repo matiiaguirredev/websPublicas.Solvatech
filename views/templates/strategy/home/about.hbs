@@ -1,0 +1,231 @@
+<!-- About Section -->
+<section id="about" class="about section">
+    {{!-- <style>
+        #about {
+            position: relative;
+            overflow: hidden;
+            /* para que el pseudo no se desborde */
+        }
+
+        #about::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('{{ strategyabout.[0].img_background }}');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            /* 👈 opacidad solo en la imagen */
+            z-index: 0;
+        }
+
+        #about .content {
+            position: relative;
+            z-index: 1;
+            /* asegura que el texto quede arriba */
+        }
+    </style> --}}
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>{{strategyabout.[0].titulo_crud}}</h2>
+        <div><span>Learn More</span> <span class="description-title">About Us</span></div>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+                <div class="about-image position-relative">
+                    {{!-- <img src="{{assetBase}}/assets/img/about/about-portrait-1.webp" --}} <img
+                        src="{{strategyabout.[0].img}}" class="img-fluid rounded-4 shadow-sm" alt="About Image"
+                        loading="lazy">
+                    <div class="experience-badge">
+                        <span class="years">{{strategyabout.[0].titulo_img}}</span>
+                        <span class="text">{{strategyabout.[0].sub_titulo_img}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-left" data-aos-delay="300">
+                <div class="about-content">
+                    <h2>{{strategyabout.[0].titulo}}</h2>
+                    <p class="lead">{{{ strategyabout.[0].descripcion }}}</p>
+                    {{!-- <p>Through a blend of sophisticated analytics and creative problem-solving, we empower
+                        organizations to thrive in rapidly evolving markets.</p>
+                    {{{ strategyabout.[0].descripcion }}} --}}
+
+                    {{!-- <div class="row g-4 mt-3">
+                        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <h5>Dedicated Team Support</h5>
+                                <p>Our highly skilled professionals are committed to providing personalized
+                                    service and impactful solutions on every engagement.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="450">
+                            <div class="feature-item">
+                                <i class="bi bi-lightbulb-fill"></i>
+                                <h5>Forward-Thinking Approach</h5>
+                                <p>We embrace innovative methodologies to develop unique strategies that drive
+                                    lasting success.</p>
+                            </div>
+                        </div>
+                    </div> --}}
+
+                    <div class="row g-4 mt-3">
+                        {{#each strategyaboutusfeature}}
+                        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="feature-item">
+                                <i class="{{icon}}"></i>
+                                <h5>{{titulo}}</h5>
+                                <p>{{{ descripcion }}}</p>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+
+                    <a href="#" class="btn btn-primary mt-4">{{{ strategyabout.[0].btn_action }}}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-section mt-5 pt-5" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+                <div class="col-lg-4" data-aos="fade-right" data-aos-delay="200">
+                    <div class="testimonial-intro">
+                        <h3>{{strategyclientstestimonial.[0].titulo}}</h3>
+                        <p>{{{strategyclientstestimonial.[0].descripcion}}}</p>
+
+                        <div class="swiper-nav-buttons mt-4">
+                            <button class="slider-prev"><i class="bi bi-arrow-left"></i></button>
+                            <button class="slider-next"><i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8" data-aos="fade-left" data-aos-delay="300">
+                    <div class="testimonial-slider swiper init-swiper">
+                        <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 800,
+                    "autoplay": {
+                      "delay": 5000
+                    },
+                    "slidesPerView": 1,
+                    "spaceBetween": 30,
+                    "navigation": {
+                      "nextEl": ".slider-next",
+                      "prevEl": ".slider-prev"
+                    },
+                    "breakpoints": {
+                      "768": {
+                        "slidesPerView": 2
+                      }
+                    }
+                  }
+                </script>
+                        <div class="swiper-wrapper">
+                            {{#each strategyclientstestimonialcards}}
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <div class="rating mb-3">
+                                        {{{renderStars stars}}}
+                                    </div>
+                                    <p>{{{ descripcion }}}</p>
+                                    <div class="client-info d-flex align-items-center mt-4">
+                                        <img src="{{img}}" class="client-img" alt="{{titulo_img}}" loading="lazy">
+                                        <div>
+                                            <h6 class="mb-0">{{titulo_img}}</h6>
+                                            <span>{{sub_titulo_img}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+
+
+                        {{!-- <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <div class="rating mb-3">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </div>
+                                <p>"Collaborating with their team was a revelation. Their innovative
+                                    strategies guided us toward achieving our objectives with precision and
+                                    speed."</p>
+                                <div class="client-info d-flex align-items-center mt-4">
+                                    <img src="{{assetBase}}/assets/img/person/person-m-1.webp" class="client-img"
+                                        alt="Client" loading="lazy">
+                                    <div>
+                                        <h6 class="mb-0">David Kim</h6>
+                                        <span>Product Lead</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <div class="rating mb-3">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <p>"The depth of knowledge and unwavering dedication they bring to every
+                                    project is exceptional. They've become an essential ally in driving our
+                                    expansion."</p>
+                                <div class="client-info d-flex align-items-center mt-4">
+                                    <img src="{{assetBase}}/assets/img/person/person-f-2.webp" class="client-img"
+                                        alt="Client" loading="lazy">
+                                    <div>
+                                        <h6 class="mb-0">Isabella Diaz</h6>
+                                        <span>Research Analyst</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <div class="rating mb-3">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </div>
+                                <p>"Their dedication to delivering superior solutions and their meticulous
+                                    attention to detail have profoundly impacted our corporate growth
+                                    trajectory."</p>
+                                <div class="client-info d-flex align-items-center mt-4">
+                                    <img src="{{assetBase}}/assets/img/person/person-f-3.webp" class="client-img"
+                                        alt="Client" loading="lazy">
+                                    <div>
+                                        <h6 class="mb-0">Olivia Chen</h6>
+                                        <span>Development Strategist</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> --}}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+</section><!-- /About Section -->

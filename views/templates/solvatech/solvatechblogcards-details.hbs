@@ -1,0 +1,347 @@
+{{> solvatech/header }}
+{{> solvatech/navbar }}
+
+{{> solvatech/sectionBanners }}
+
+<main>
+    <section class="space-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8">
+                    <div class="wnr-blog-details-area">
+                        <div class="single-post-wrap">
+                            <div class="single-post-head">
+                                <div class="single-post-thumbnail"><img src="{{solvatechblogcards.img}}"
+                                        alt="Blog Images"></div>
+                                <div class="single-post-meta">
+                                    <ul class="post-meta-list">
+                                        <li>
+                                            <i class="icon-ui-user"></i>
+                                            By
+                                            {{solvatechblogcards.autor_rel.titulo}}
+                                        </li>
+                                        <li><i class="icon-ui-comments"></i>Comments (04)</li>
+                                        <li><i class="icon-ui-calendar-days"></i>{{{formatDateBlog
+                                            solvatechblogcards.fecha "es"}}}</li>
+                                    </ul>
+                                </div>
+                                <div class="single-post-title">
+                                    {{!-- <h1 class="post-title">{{solvatechblogcards.titulo}}</h1> --}}
+                                </div>
+                            </div>
+
+                            <div class="single-post-content">
+
+                                {{{ solvatechblogcards.descripcion }}}
+
+                                <div class="post-share-wrap m-t30">
+                                    <div class="post-tag">
+                                        <h4 class="share-title">Tags:</h4>
+                                        <div class="tag-list">
+                                            {{#each solvatechblogcards.tags_rel}}
+                                            <a href="javascript:;">{{titulo}}</a>
+                                            {{/each}}
+                                        </div>
+                                    </div>
+
+                                    {{!-- esto queda ver donde vamos a cargar las redes sociales del propio sitio --}}
+                                    <div class="social-share">
+                                        <h4 class="share-title">Share:</h4>
+                                        <ul class="social-icon social-media transparent-border">
+                                            <li><a href="javascript:;"><i class="icon-ui-facebook"></i></a></li>
+                                            <li><a href="javascript:;"><i class="icon-ui-instagram"></i></a></li>
+                                            <li><a href="javascript:;"><i class="icon-ui-twitter"></i></a></li>
+                                            <li><a href="javascript:;"><i class="icon-ui-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- end .post-share-wrap-->
+
+                                <div class="author-wrap">
+                                    <div class="author-thumb"><img src="{{solvatechblogcards.autor_rel.img}}"
+                                            alt="Blog Author"></div>
+                                    <div class="author-content">
+                                        <h4 class="author-title">{{solvatechblogcards.autor_rel.titulo}}</h4>
+                                        <div class="author-designation">{{solvatechblogcards.autor_rel.puesto}}</div>
+                                        <p class="author-desc">No tienen descripcion aun los team cards</p>
+
+                                        {{{renderSocialLinks solvatechblogcards.autor_rel}}}
+
+                                    </div>
+                                </div>
+                                <!-- end .blog author-->
+
+                                <div class="wnr-post-comment m-t40">
+                                    <h3 class="post-title">Post Comments</h3>
+
+                                    {{!-- PROXIMAMENTE
+                                    <div class="comment-list">
+                                        <div class="comment-item">
+                                            <div class="comment-thumbnail-wrap">
+                                                <div class="comment-thumbnail"><img
+                                                        src="assets/images/blog-details/author-comment01.jpg"
+                                                        alt="Author Image"></div>
+                                            </div>
+                                            <div class="comment-content">
+                                                <div class="commenter-info">
+                                                    <h5 class="author-name"><a href="javascript:;">David Mitchel</a>
+                                                    </h5>
+                                                    <div class="time"><i class="bi bi-clock"></i> Jan 18, 2025 at 02:23
+                                                        pm</div>
+                                                </div>
+                                                <div class="comment-txt">
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                        Explicabo facere quia alias inventore quam incidunt natus ea.
+                                                        Recusandae iste libero molestiae, illum, cum itaque corporis
+                                                        velit deleniti quae, id voluptatem? </p>
+                                                </div>
+                                                <div class="comment-actions">
+                                                    <div class="action-wrap">
+                                                        <a href="javascript:;"><i class="bi bi-hand-thumbs-up"></i>
+                                                            <span>5.6k</span></a>
+                                                        <a href="javascript:;"><i class="bi bi-hand-thumbs-down"></i>
+                                                            <span>1.3k</span></a>
+                                                    </div>
+                                                    <div class="action-wrap"><a href="javascript:;"><i
+                                                                class="bi bi-reply-fill"></i> <span>Reply</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comment-item comment-reply">
+                                            <div class="comment-thumbnail-wrap">
+                                                <div class="comment-thumbnail"><img
+                                                        src="assets/images/blog-details/author-comment02.jpg"
+                                                        alt="Author Image"></div>
+                                            </div>
+                                            <div class="comment-content reply-comment-content">
+                                                <div class="commenter-info">
+                                                    <h5 class="author-name"><a href="javascript:;">Cameron
+                                                            Williamson</a></h5>
+                                                    <div class="time"><i class="bi bi-clock"></i> Nov 25, 2024 at 12:03
+                                                        pm</div>
+                                                </div>
+                                                <div class="comment-txt">
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                        Explicabo facere quia alias inventore quam incidunt natus ea.
+                                                        Recusandae iste libero molestiae, illum, cum itaque corporis
+                                                        velit deleniti quae, id voluptatem? </p>
+                                                </div>
+                                                <div class="comment-actions">
+                                                    <div class="action-wrap">
+                                                        <a href="javascript:;"><i class="bi bi-hand-thumbs-up"></i>
+                                                            <span>5.6k</span></a>
+                                                        <a href="javascript:;"><i class="bi bi-hand-thumbs-down"></i>
+                                                            <span>1.3k</span></a>
+                                                    </div>
+                                                    <div class="action-wrap"><a href="javascript:;"><i
+                                                                class="bi bi-reply-fill"></i> <span>Reply</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comment-item">
+                                            <div class="comment-thumbnail-wrap">
+                                                <div class="comment-thumbnail"><img
+                                                        src="assets/images/blog-details/author-comment01.jpg"
+                                                        alt="Author Image"></div>
+                                            </div>
+                                            <div class="comment-content">
+                                                <div class="commenter-info">
+                                                    <h5 class="author-name"><a href="javascript:;">David Mitchel</a>
+                                                    </h5>
+                                                    <div class="time"><i class="bi bi-clock"></i> Dec 10, 2024 at 04:56
+                                                        am</div>
+                                                </div>
+                                                <div class="comment-txt">
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                        Explicabo facere quia alias inventore quam incidunt natus ea.
+                                                        Recusandae iste libero molestiae, illum, cum itaque corporis
+                                                        velit deleniti quae, id voluptatem? </p>
+                                                </div>
+                                                <div class="comment-actions">
+                                                    <div class="action-wrap">
+                                                        <a href="javascript:;"><i class="bi bi-hand-thumbs-up"></i>
+                                                            <span>5.6k</span></a>
+                                                        <a href="javascript:;"><i class="bi bi-hand-thumbs-down"></i>
+                                                            <span>1.3k</span></a>
+                                                    </div>
+                                                    <div class="action-wrap"><a href="javascript:;"><i
+                                                                class="bi bi-reply-fill"></i> <span>Reply</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> --}}
+
+                                    <!-- end .comment-list-->
+                                </div>
+                                <!-- end .wnr-post-comment-->
+
+                                {{!-- PROXIMAMENTE
+                                <div class="wnr-leave-comment m-t70 m-xs-t40">
+                                    <div class="leave-comment">
+                                        <div class="comment-body">
+                                            <h3 class="comment-title">Leave a Comment</h3>
+                                            <form class="comment-form" method="post" action="">
+                                                <div class="form-grid">
+                                                    <div class="row">
+                                                        <div class="col-12 col-md-6">
+                                                            <div class="input-box">
+                                                                <span class="icon-form"><i
+                                                                        class="bi bi-person"></i></span>
+                                                                <input type="text" name="name" placeholder="Your Name"
+                                                                    required="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-md-6">
+                                                            <div class="input-box">
+                                                                <span class="icon-form"><i
+                                                                        class="bi bi-envelope"></i></span>
+                                                                <input type="email" name="email"
+                                                                    placeholder="Email Address" required="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-grid">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="input-box">
+                                                                <span class="icon-form"><i
+                                                                        class="bi bi-globe2"></i></span>
+                                                                <input type="text" name="website" placeholder="Website"
+                                                                    required="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-grid">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="input-box">
+                                                                <span class="icon-form msg-icon"><i
+                                                                        class="bi bi-pencil"></i></span>
+                                                                <textarea type="text" cols="30" rows="3"
+                                                                    placeholder="Write a Comment"
+                                                                    required=""></textarea>
+                                                            </div>
+                                                            <div class="btn-box">
+                                                                <button type="submit" name="submit"
+                                                                    class="wnr-btn btn-secondary btn-rounded w-100"><span>Submit</span><i
+                                                                        class="unicon-arrow-up-right"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- end .comment-body -->
+                                    </div>
+                                    <!-- end .leave-comment-->
+                                </div> --}}
+                                <!-- end .wnr-leave-comment-->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end .wnr-blog-details-area-->
+                </div>
+                <div class="col-xl-4">
+                    <aside class="wnr-sidebar-area sidebar-sticky">
+                        <div class="widget-sidebar">
+                            <div class="widget-inner">
+                                <div class="widget-title">
+                                    {{!-- queda hacer la funcionalidad de search --}}
+                                    <h3>Search</h3>
+                                </div>
+                                <div class="widget-search">
+                                    <form class="search-form" method="post" action="">
+                                        <div class="input-box">
+                                            <input type="text" name="search" placeholder="Enter Keyword">
+                                            <button type="submit" class="search-icon"><i
+                                                    class="icon-search"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{#if solvatechservicescards}}
+                        <div class="widget-sidebar">
+                            <div class="widget-inner">
+                                <div class="widget-title">
+                                    <h3>Categories</h3>
+                                </div>
+                                <div class="widget-categories">
+                                    <ul class="widget-category-list">
+                                        {{#each solvatechservicescards}}
+                                        <li>
+                                            <a href="/services">
+                                                {{titulo}}
+                                                <span class="arrow-icon"><i class="unicon-arrow-up-right"></i></span>
+                                            </a>
+                                        </li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {{/if}}
+
+                        {{#if recent_posts}}
+                        <div class="widget-sidebar">
+                            <div class="widget-inner">
+                                <div class="widget-title">
+                                    <h3>Recent Posts</h3>
+                                </div>
+                                <div class="widget-post">
+                                    <ul class="widget-post-list">
+                                        {{#each recent_posts}}
+                                        <li>
+                                            <div class="widget-post-thumbnail">
+                                                <a href="/solvatechblogcards/{{id}}">
+                                                    <img src="{{img}}" alt="{{titulo}}">
+                                                </a>
+                                            </div>
+                                            <div class="widget-post-content">
+                                                <h4 class="widget-post-title">
+                                                    <a href="/solvatechblogcards/{{id}}">{{titulo}}</a>
+                                                </h4>
+                                                <div class="widget-post-meta">
+                                                    <i class="bi bi-clock"></i>
+                                                    <span class="widget-post-date">{{{formatDate fecha "en"}}}</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {{/if}}
+
+
+                        <div class="widget-sidebar">
+                            <div class="widget-inner">
+                                <div class="widget-title">
+                                    <h3>Popular Tags</h3>
+                                </div>
+                                <div class="widget-tags">
+                                    <div class="widget-tag-list">
+                                        {{#each solvatechtags}}
+                                        <a href="javascript:;">{{titulo}}</a>
+                                        {{/each}}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section><!-- end .blog details-->
+</main>
+
+
+{{> solvatech/footer }}

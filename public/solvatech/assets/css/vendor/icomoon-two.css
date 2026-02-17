@@ -1,0 +1,167 @@
+@font-face {
+    font-family: 'icomoon-two';
+    src: url('../../fonts/icomoon/icomoon-two.eot?nf1uxi');
+    src: url('../../fonts/icomoon/icomoon-two.eot?nf1uxi#iefix') format('embedded-opentype'),
+      url('../../fonts/icomoon/icomoon-two.ttf?nf1uxi') format('truetype'),
+      url('../../fonts/icomoon/icomoon-two.woff?nf1uxi') format('woff'),
+      url('../../fonts/icomoon/icomoon-two.svg?nf1uxi#icomoon-two') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-two-"],
+  [class*=" icon-two-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon-two' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-two-rating-stars:before {
+    content: "\e915";
+  }
+  
+  .icon-two-arrow-left-short:before {
+    content: "\e922";
+  }
+  
+  .icon-two-arrow-right-short:before {
+    content: "\e923";
+  }
+  
+  .icon-two-solutions-three:before {
+    content: "\e91f";
+  }
+  
+  .icon-two-algorithm:before {
+    content: "\e900";
+  }
+  
+  .icon-two-angle-small-up:before {
+    content: "\e901";
+  }
+  
+  .icon-two-angle-small-up1:before {
+    content: "\e902";
+  }
+  
+  .icon-two-arrow-circle-right-1:before {
+    content: "\e903";
+  }
+  
+  .icon-two-arrow-circle-right1:before {
+    content: "\e904";
+  }
+  
+  .icon-two-arrow-circle-right:before {
+    content: "\e905";
+  }
+  
+  .icon-two-badge-check:before {
+    content: "\e906";
+  }
+  
+  .icon-two-comments:before {
+    content: "\e907";
+  }
+  
+  .icon-two-cybersecurity:before {
+    content: "\e908";
+  }
+  
+  .icon-two-deal:before {
+    content: "\e909";
+  }
+  
+  .icon-two-diagram:before {
+    content: "\e90a";
+  }
+  
+  .icon-two-failure:before {
+    content: "\e90b";
+  }
+  
+  .icon-two-flow-chart:before {
+    content: "\e90c";
+  }
+  
+  .icon-two-folder-management:before {
+    content: "\e90d";
+  }
+  
+  .icon-two-gear:before {
+    content: "\e90e";
+  }
+  
+  .icon-two-global-solution:before {
+    content: "\e90f";
+  }
+  
+  .icon-two-it-settings:before {
+    content: "\e910";
+  }
+  
+  .icon-two-lightbulb-dollar:before {
+    content: "\e911";
+  }
+  
+  .icon-two-mail:before {
+    content: "\e912";
+  }
+  
+  .icon-two-medal:before {
+    content: "\e913";
+  }
+  
+  .icon-two-messages:before {
+    content: "\e914";
+  }
+  
+  .icon-two-phone-call:before {
+    content: "\e916";
+  }
+  
+  .icon-two-play:before {
+    content: "\e917";
+  }
+  
+  .icon-two-question:before {
+    content: "\e918";
+  }
+  
+  .icon-two-seo:before {
+    content: "\e919";
+  }
+  
+  .icon-two-sign-in-alt:before {
+    content: "\e91a";
+  }
+  
+  .icon-two-sign-in-alt1:before {
+    content: "\e91b";
+  }
+  
+  .icon-two-smart-grid:before {
+    content: "\e91c";
+  }
+  
+  .icon-two-solution-1:before {
+    content: "\e91d";
+  }
+  
+  .icon-two-team-work:before {
+    content: "\e920";
+  }
+  
+  .icon-two-user:before {
+    content: "\e921";
+  }

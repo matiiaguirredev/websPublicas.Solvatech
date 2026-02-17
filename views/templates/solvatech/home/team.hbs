@@ -1,0 +1,52 @@
+<section class="space-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title-center mb-55 mb-xs-35">
+                    <span class="wnr-section-subtitle wow fadeInUp">{{ solvatechteam.[0].subtitulo }}</span>
+                    <h2 class="wnr-section-title mb-25 mb-xs-20 wow fadeInUp" data-wow-delay=".3s">{{
+                        solvatechteam.[0].titulo }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="team-activation slick-wrapper--10 wnr-slick-dots wnr-slick-arrow arrow-between">
+            {{#each solvatechteamcards}}
+            <div class="slick-single-slide">
+                <div class="team-member-wrap">
+                    <div class="item-inner">
+                        <div class="media-box">
+                            <div class="media">
+                                <a href="javascript:;">
+                                    <img src="{{img}}" alt="{{titulo}}">
+                                </a>
+                            </div>
+                            <div class="social-share">
+                                <span class="icon-share"><i class="bi bi-share"></i></span>
+                                <div class="social-links">
+                                    {{#if instagram}}<a href="{{instagram}}" target="_blank"><i
+                                            class="icon-ui-instagram"></i></a>{{/if}}
+                                    {{#if facebook}}<a href="{{facebook}}" target="_blank"><i
+                                            class="icon-ui-facebook"></i></a>{{/if}}
+                                    {{#if linkedin}}<a href="{{linkedin}}" target="_blank"><i
+                                            class="icon-ui-linkedin"></i></a>{{/if}}
+                                    {{#if x}}<a href="{{x}}" target="_blank"><i class="icon-ui-twitter"></i></a>{{/if}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-box">
+                            <div class="info">
+                                <h4 class="name"><a href="javascript:;">{{titulo}}</a></h4>
+                                <span class="designation">{{puesto}}</span>
+                            </div>
+                            <a href="javascript:;" class="btn-link">
+                                <i class="unicon-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+</section><!-- end .team-->

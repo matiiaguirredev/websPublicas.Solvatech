@@ -1,0 +1,53 @@
+<section class="pricing-area space-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title-center mb-55 mb-xs-35">
+                    <span class="wnr-section-subtitle wow fadeInUp" data-wow-delay=".3s">{{
+                        solvatechpricing.[0].subtitulo }}</span>
+                    <h2 class="wnr-section-title mb-25 mb-xs-20 wow fadeInUp" data-wow-delay=".3s">{{
+                        solvatechpricing.[0].titulo }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {{#each solvatechpricingcards}}
+            <div class="col-md-12 col-lg-4 wow fadeInUp">
+                <div class="pricing-wrap">
+                    <div class="pricing-item-inner">
+                        <div class="pricing-icon">
+                            <i class="{{icon}}"></i>
+                        </div>
+                        <h4 class="pricing-title">{{titulo}}</h4>
+
+                        <div class="pricing">
+                            {{!-- Separar parte entera y decimal del precio --}}
+                            {{#with (split precio '.') as |parts|}}
+                            <div class="price">
+                                <i class="bi bi-currency-dollar currency"></i>
+                                {{parts.[0]}}<small>.{{parts.[1]}}</small>
+                            </div>
+                            {{/with}}
+                            <span class="pricing-period">{{duracion}}</span>
+                        </div>
+
+                        {{#if descripcion}}
+                        <div class="pricing-features-wrap">
+                            {{{descripcion}}}
+                        </div>
+                        {{/if}}
+
+                        <div class="pricing-btn-wrap">
+                            <a href="javascript:;" class="wnr-btn btn-primary btn-bordered price-btn">
+                                <span>Get Started</span>
+                                <i class="unicon-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+</section><!-- end .pricing-->

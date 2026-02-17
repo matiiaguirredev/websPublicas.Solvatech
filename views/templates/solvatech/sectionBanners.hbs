@@ -1,0 +1,18 @@
+{{#if sectionBanner}}
+<div class="breadcrumb-wrapper cover-bg" {{#if sectionBanner.img_background}}
+    style="background-image:url('{{sectionBanner.img_background}}');" {{else if sectionBanner.color_background}}
+    style="background-color:{{sectionBanner.color_background}};" {{/if}}>
+    <div class="container">
+        <div class="page-heading">
+            <div class="breadcrumb-sub-title">
+                <h1 class="wow fadeInUp" data-wow-delay=".3s">{{sectionBanner.titulo}}</h1>
+            </div>
+            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                <li><a href="/"><i class="bi bi-house-door"></i>Home</a></li>
+                <li><i class="bi bi-chevron-right"></i></li>
+                <li>{{sectionBanner.subtitulo}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{{/if}}

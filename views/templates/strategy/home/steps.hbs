@@ -1,0 +1,93 @@
+<!-- Steps Section -->
+<section id="steps" class="steps section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>{{strategysteps.[0].titulo_crud}}</h2>
+        <div><span>How we</span> <span class="description-title">Work</span></div>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="steps-wrapper">
+
+            <div class="steps-wrapper">
+                {{#each strategystepscards}}
+                <div class="step-item" data-aos="fade-right" data-aos-delay="200">
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="{{icon}}"></i>
+                        </div>
+                        <div class="step-info">
+                            <span class="step-number">{{titulo}}</span>
+                            <h3>{{sub_titulo}}</h3>
+                            <p>{{{ descripcion }}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+
+            {{!-- <div class="step-item" data-aos="fade-right" data-aos-delay="200">
+                <div class="step-content">
+                    <div class="step-icon">
+                        <i class="bi bi-lightbulb"></i>
+                    </div>
+                    <div class="step-info">
+                        <span class="step-number">Step 01</span>
+                        <h3>Initial Consultation</h3>
+                        <p>Conducting thorough discovery sessions to understand your business requirements and
+                            objectives. Our expert team analyzes your needs to create a customized approach.</p>
+                    </div>
+                </div>
+            </div><!-- End Step Item -->
+
+            <div class="step-item" data-aos="fade-left" data-aos-delay="300">
+                <div class="step-content">
+                    <div class="step-icon">
+                        <i class="bi bi-gear"></i>
+                    </div>
+                    <div class="step-info">
+                        <span class="step-number">Step 02</span>
+                        <h3>Planning &amp; Strategy</h3>
+                        <p>Developing comprehensive strategies and detailed project plans based on the initial
+                            consultation. We create actionable roadmaps with clear milestones and deliverables.
+                        </p>
+                    </div>
+                </div>
+            </div><!-- End Step Item -->
+
+            <div class="step-item" data-aos="fade-right" data-aos-delay="400">
+                <div class="step-content">
+                    <div class="step-icon">
+                        <i class="bi bi-bar-chart"></i>
+                    </div>
+                    <div class="step-info">
+                        <span class="step-number">Step 03</span>
+                        <h3>Development Phase</h3>
+                        <p>Executing the planned strategies with precision and agility. Our team implements
+                            solutions while maintaining constant communication and progress updates.</p>
+                    </div>
+                </div>
+            </div><!-- End Step Item -->
+
+            <div class="step-item" data-aos="fade-left" data-aos-delay="500">
+                <div class="step-content">
+                    <div class="step-icon">
+                        <i class="bi bi-check2-circle"></i>
+                    </div>
+                    <div class="step-info">
+                        <span class="step-number">Step 04</span>
+                        <h3>Launch &amp; Support</h3>
+                        <p>Ensuring smooth deployment and providing ongoing support for implemented solutions.
+                            We monitor performance and make necessary adjustments for optimal results.</p>
+                    </div>
+                </div>
+            </div><!-- End Step Item --> --}}
+
+        </div>
+
+    </div>
+
+</section><!-- /Steps Section -->

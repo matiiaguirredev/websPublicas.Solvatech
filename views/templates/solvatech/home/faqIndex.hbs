@@ -1,0 +1,67 @@
+<section class="funfact include-bg jarallax" data-overlay="bg-fill-hsb-scorecell" data-overlay-opacity="4"
+    data-background="assets/images/bg/funfact-bg.png">
+    <div class="container">
+        <div class="fact-counter">
+            <div class="row">
+                <div class="row">
+                    {{#each solvatechfaq}}
+                    <div class="counter-block col-lg-3 col-sm-6 wow fadeInUp">
+                        <div class="inner-box">
+                            <div class="icon">
+                                <i class="{{icon}}"></i>
+                            </div>
+                            <div class="content-box">
+                                <div class="counter-title">{{subtitulo}}</div>
+                                <div class="count-box">
+                                    <span class="count-text count">{{titulo_numero}}</span>{{titulo_sufijo}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+
+
+                {{!-- <div class="counter-block col-lg-3 col-sm-6 wow fadeInUp">
+                    <div class="inner-box">
+                        <div class="icon"><i class="icon-two-medal"></i></div>
+                        <div class="content-box">
+                            <div class="counter-title">Years Of Experience</div>
+                            <div class="count-box"><span class="count-text count">18</span>+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="counter-block col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="inner-box">
+                        <div class="icon"><i class="icon-two-folder-management"></i></div>
+                        <div class="content-box">
+                            <div class="counter-title">Project Completed</div>
+                            <div class="count-box"><span class="count-text count">20</span>k</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="counter-block col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
+                    <div class="inner-box">
+                        <div class="icon"><i class="icon-two-team-work"></i></div>
+                        <div class="content-box">
+                            <div class="counter-title">Team Members</div>
+                            <div class="count-box"><span class="count-text count">29</span>+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="counter-block col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay=".7s">
+                    <div class="inner-box">
+                        <div class="icon"><i class="icon-two-rating-stars"></i></div>
+                        <div class="content-box">
+                            <div class="counter-title">Satisfied Clients</div>
+                            <div class="count-box"><span class="count-text count">99</span>%</div>
+                        </div>
+                    </div>
+                </div> --}}
+            </div>
+        </div>
+    </div>
+</section><!-- end .funfact-->

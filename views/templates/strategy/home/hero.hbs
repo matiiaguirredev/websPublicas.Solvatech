@@ -1,0 +1,57 @@
+<!-- Hero Section -->
+<section id="hero" class="hero section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 content-col" data-aos="fade-up">
+                <div class="content">
+                    <div class="agency-name">
+                        <h5>{{ strategyhero.[0].subtitulo }}</h5>
+                    </div>
+
+                    {{!-- <div class="main-heading">
+                        <h1>CREATIVE <br>DESIGN</h1>
+                    </div> --}}
+
+                    <div class="main-heading">
+                        <h1>{{mainHeadingParts.[0]}} <br> {{mainHeadingParts.[1]}}</h1>
+                    </div>
+
+
+                    <div class="divider"></div>
+
+                    <div class="description">
+                        <p>{{{ strategyhero.[0].descripcion }}}</p>
+                    </div>
+
+                    <div class="cta-button">
+                        <a href="#services" class="btn">
+                            <span>{{ strategyhero.[0].btn_action }}</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5" data-aos="zoom-out">
+                <div class="visual-content">
+                    <div class="fluid-shape">
+                        <img src="{{ strategyhero.[0].img }}" alt="{{strategyhero.[0].sub_titulo_img}}"
+                            class="fluid-img">
+                    </div>
+
+                    <div class="stats-card">
+                        <div class="stats-number">
+                            <h2>{{strategyhero.[0].titulo_img}}</h2>
+                        </div>
+                        <div class="stats-label">
+                            <p>{{strategyhero.[0].sub_titulo_img}}</p>
+                        </div>
+                        <div class="stats-arrow">
+                            <a href="#portfolio"><i class="{{strategyhero.[0].icon_img}}"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- /Hero Section -->

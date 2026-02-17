@@ -1,0 +1,120 @@
+<section class="space-1 contact include-bg jarallax" data-overlay="dark" data-overlay-opacity="4"
+    data-background="{{solvatechappointment.[0].img_background}}">
+    <div class="contact-content">
+        <div class="container">
+            <div class="contact-panel">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="contact-card contact-card-left">
+                            <div class="contact-body">
+                                <div class="contact-info-box">
+                                    <div class="section-title-wrapper mb-30 mb-xs-20">
+                                        <span
+                                            class="wnr-section-subtitle mb-12 wow fadeInUp">{{solvatechappointment.[0].subtitulo}}</span>
+                                        <h2 class="wnr-section-title mb-25 mb-xs-20 wow fadeInUp text-white"
+                                            data-wow-delay=".3s">{{solvatechappointment.[0].titulo}}</h2>
+                                    </div>
+                                    
+                                    {{#each solvatechcontactcards}}
+                                    <div class="info-box-wrap">
+                                        <div class="info-icon">
+                                            <i class="{{icon}}"></i>
+                                        </div>
+                                        <div class="info-content">
+                                            <h4 class="info-title">{{titulo}}</h4>
+                                            <div class="info-text">
+                                                {{{descripcion}}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+
+                                </div>
+                            </div>
+                            <!-- end .contact-body -->
+                        </div>
+                        <!-- end .contact-card-->
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="contact-card contact-card-right wow fadeInRight" data-wow-delay=".3s">
+                            <div class="contact-body">
+                                <h3 class="card-heading">{{solvatechappointment.[0].titulo_formulario}}</h3>
+                                <p class="card-desc">{{{solvatechappointment.[0].descripcion_formulario}}}</p>
+                                <form action="php/form-process.php" name="contactus" method="post" id="contact-form"
+                                    class="contact-form">
+                                    <div class="form-grid">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="input-box">
+                                                    <span class="icon-form"><i class="bi bi-person"></i></span>
+                                                    <input type="text" name="name" placeholder="Your Name">
+                                                </div>
+                                                <span class="error_msg" id="name_error"></span>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="input-box">
+                                                    <span class="icon-form"><i class="bi bi-envelope"></i></span>
+                                                    <input type="email" name="email" placeholder="Email Address">
+                                                </div>
+                                                <span class="error_msg" id="email_error"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-grid">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="input-box">
+                                                    <span class="icon-form"><i class="bi bi-telephone"></i></span>
+                                                    <input type="tel" name="phone" pattern="[0-9\-]*"
+                                                        placeholder="Contact Number">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="input-box h-75">
+                                                    <span class="icon-form"><i class="bi bi-tools"></i></span>
+                                                    <select name="subject">
+                                                        <option value="">Select Service</option>
+                                                        <option value="web design">Web Design</option>
+                                                        <option value="graphic">Graphic</option>
+                                                        <option value="app development">App Development</option>
+                                                    </select>
+                                                </div>
+                                                <span class="error_msg" id="subject_error"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-grid">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="input-box">
+                                                    <span class="icon-form msg-icon"><i
+                                                            class="bi bi-chat-left-text"></i></span>
+                                                    <textarea cols="30" rows="3" name="message"
+                                                        placeholder="Write Message"></textarea>
+                                                    <span class="error_msg" id="message_error"></span>
+                                                </div>
+                                                <div class="mailsendbtn btn-box">
+                                                    <button type="submit" name="contactus"
+                                                        class="wnr-btn btn-secondary w-100"><span>Submit</span> <i
+                                                            class="unicon-arrow-up-right"></i></button>
+                                                    <div class="loading"><img class="img-fluid"
+                                                            src="{{assetBase}}/assets/images/ajax-loader.gif"
+                                                            alt="loading"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="response-msg"></div>
+                            </div><!-- end .contact-body -->
+                        </div><!-- end .contact-card-->
+                    </div>
+                </div>
+                <!-- end .row-->
+            </div>
+            <!-- end .contact-panel-->
+        </div>
+        <!-- End .container-->
+    </div>
+    <!-- end .contact-content-->
+</section><!-- end .appointment-->

@@ -1,0 +1,41 @@
+/* agregado por mi para el PRICING MUST POPULAR */
+
+
+/* === Popular en la 2ª tarjeta (Professional) – sin tocar HTML === */
+.pricing .row.gy-4>.col-lg-4:nth-child(2) .pricing-card {
+    position: relative;
+    /* necesario para el tag */
+    border: 2px solid var(--accent-color);
+    /* igual que .pricing-card.popular */
+}
+
+/* Cinta "Most Popular" igual que .popular-tag */
+.pricing .row.gy-4>.col-lg-4:nth-child(2) .pricing-card::before {
+    content: "Most Popular";
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 40px;
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+/* Botón como popular */
+.pricing .row.gy-4>.col-lg-4:nth-child(2) .plan-cta .btn-plan {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+}
+
+.pricing .row.gy-4>.col-lg-4:nth-child(2) .plan-cta .btn-plan:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+/* Mantener efecto hover general */
+.pricing .pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}

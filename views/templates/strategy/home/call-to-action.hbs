@@ -1,0 +1,71 @@
+<!-- Call To Action Section -->
+<section id="call-to-action" class="call-to-action section">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="advertise-1 d-flex flex-column flex-lg-row gap-4 align-items-center position-relative">
+
+            <div class="content-left flex-grow-1" data-aos="fade-right" data-aos-delay="200">
+                <span class="badge text-uppercase mb-2">{{ strategycalltoaction.[0].sub_titulo }}</span>
+                <h2>{{ strategycalltoaction.[0].titulo }}</h2>
+                <p class="my-4">{{{ strategycalltoaction.[0].descripcion }}}</p>
+
+                {{!-- foreach de strategycalltoaction items --}}
+
+                <div class="features d-flex flex-wrap gap-3 mb-4">
+
+                    {{#each strategycalltoactionitems }}
+                    <div class="feature-item">
+                        <i class="{{icon}}"></i>
+                        <span>{{titulo}}</span>
+                    </div>
+                    {{/each}}
+
+
+                    {{!-- <div class="feature-item">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Premium Support</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Cloud Integration</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Real-time Analytics</span>
+                    </div> --}}
+                </div>
+
+                {{!-- hasta aca --}}
+
+                <div class="cta-buttons d-flex flex-wrap gap-3">
+                    <a href="#" class="btn btn-primary">{{ strategycalltoaction.[0].btn_action }}</a>
+                    <a href="#" class="btn btn-outline">{{ strategycalltoaction.[0].btn_info }}</a>
+                </div>
+            </div>
+
+            <div class="content-right position-relative" data-aos="fade-left" data-aos-delay="300">
+                {{!-- <img src="{{assetBase}}/assets/img/misc/misc-1.webp" alt="Digital Platform"
+                    class="img-fluid rounded-4"> --}}
+                <img src="{{strategycalltoaction.[0].img}}" alt="Digital Platform" class="img-fluid rounded-4">
+                <div class="floating-card">
+                    <div class="card-icon">
+                        <i class="{{strategycalltoaction.[0].icon_img}}"></i>
+                    </div>
+                    <div class="card-content">
+                        <span class="stats-number">{{ strategycalltoaction.[0].titulo_img }}</span>
+                        <span class="stats-text">{{ strategycalltoaction.[0].sub_titulo_img }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="decoration">
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section><!-- /Call To Action Section -->

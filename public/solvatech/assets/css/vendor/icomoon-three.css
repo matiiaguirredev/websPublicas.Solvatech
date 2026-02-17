@@ -1,0 +1,167 @@
+@font-face {
+    font-family: 'icomoon-three';
+    src: url('../../fonts/icomoon/icomoon-three.eot?rye3go');
+    src: url('../../fonts/icomoon/icomoon-three.eot?rye3go#iefix') format('embedded-opentype'),
+      url('../../fonts/icomoon/icomoon-three.ttf?rye3go') format('truetype'),
+      url('../../fonts/icomoon/icomoon-three.woff?rye3go') format('woff'),
+      url('../../fonts/icomoon/icomoon-three.svg?rye3go#icomoon-three') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-three-"],
+  [class*=" icon-three-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon-three' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-three-close:before {
+    content: "\e91e";
+  }
+  
+  .icon-three-magnifying-glass:before {
+    content: "\e922";
+  }
+  
+  .icon-three-shopping-cart:before {
+    content: "\e921";
+  }
+  
+  .icon-three-down-arrow:before {
+    content: "\e902";
+  }
+  
+  .icon-three-up-arrow:before {
+    content: "\e919";
+  }
+  
+  .icon-three-left-arrow:before {
+    content: "\e91a";
+  }
+  
+  .icon-three-right-arrow:before {
+    content: "\e91b";
+  }
+  
+  .icon-three-phone-call:before {
+    content: "\e900";
+  }
+  
+  .icon-three-check-mark:before {
+    content: "\e901";
+  }
+  
+  .icon-three-social-care:before {
+    content: "\e903";
+  }
+  
+  .icon-three-note-pad:before {
+    content: "\e904";
+  }
+  
+  .icon-three-advertisement:before {
+    content: "\e905";
+  }
+  
+  .icon-three-trophy:before {
+    content: "\e906";
+  }
+  
+  .icon-three-best-price:before {
+    content: "\e907";
+  }
+  
+  .icon-three-cooperation:before {
+    content: "\e908";
+  }
+  
+  .icon-three-ads-campaign:before {
+    content: "\e909";
+  }
+  
+  .icon-three-headhunter:before {
+    content: "\e90a";
+  }
+  
+  .icon-three-agency:before {
+    content: "\e90b";
+  }
+  
+  .icon-three-advertisig-agency:before {
+    content: "\e90c";
+  }
+  
+  .icon-three-management:before {
+    content: "\e90d";
+  }
+  
+  .icon-three-customer-service:before {
+    content: "\e90e";
+  }
+  
+  .icon-three-briefing:before {
+    content: "\e90f";
+  }
+  
+  .icon-three-ancestors:before {
+    content: "\e910";
+  }
+  
+  .icon-three-admin:before {
+    content: "\e911";
+  }
+  
+  .icon-three-play:before {
+    content: "\e912";
+  }
+  
+  .icon-three-play-button:before {
+    content: "\e913";
+  }
+  
+  .icon-three-low-cost:before {
+    content: "\e914";
+  }
+  
+  .icon-three-zakat:before {
+    content: "\e915";
+  }
+  
+  .icon-three-agent:before {
+    content: "\e916";
+  }
+  
+  .icon-three-solutions:before {
+    content: "\e917";
+  }
+  
+  .icon-three-family:before {
+    content: "\e918";
+  }
+  
+  .icon-three-refund:before {
+    content: "\e91c";
+  }
+  
+  .icon-three-open-mail:before {
+    content: "\e91d";
+  }
+  
+  .icon-three-pin:before {
+    content: "\e91f";
+  }
+  
+  .icon-three-messages:before {
+    content: "\e920";
+  }

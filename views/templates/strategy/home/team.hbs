@@ -1,0 +1,170 @@
+<!-- Team Section -->
+<section id="team" class="team section light-background">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>{{ strategyteam.[0].titulo_crud}}</h2>
+        <div><span>Check Our</span> <span class="description-title">Team</span></div>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+            {{#each strategyteamcards}}
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="team-member d-flex">
+                    <div class="member-img">
+                        <img src="{{img}}" class="img-fluid" alt="{{titulo}}" loading="lazy">
+                    </div>
+                    <div class="member-info flex-grow-1">
+                        <h4>{{titulo}}</h4>
+                        <span>{{sub_titulo}}</span>
+                        <p>{{{ descripcion }}}</p>
+                        <div class="social">
+                            {{#if facebook}}<a href="{{facebook}}" target="_blank" rel="noopener noreferrer"><i
+                                    class="bi bi-facebook"></i></a>{{/if}}
+                            {{#if x}}<a href="{{x}}" target="_blank" rel="noopener noreferrer"><i
+                                    class="bi bi-twitter-x"></i></a>{{/if}}
+                            {{#if linkedin}}<a href="{{linkedin}}" target="_blank" rel="noopener noreferrer"><i
+                                    class="bi bi-linkedin"></i></a>{{/if}}
+                            {{#if instagram}}<a href="{{instagram}}" target="_blank" rel="noopener noreferrer"><i
+                                    class="bi bi-instagram"></i></a>{{/if}}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+            {{!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="team-member d-flex">
+                    <div class="member-img">
+                        <img src="{{assetBase}}/assets/img/person/person-m-7.webp" class="img-fluid" alt=""
+                            loading="lazy">
+                    </div>
+                    <div class="member-info flex-grow-1">
+                        <h4>Walter White</h4>
+                        <span>Chief Executive Officer</span>
+                        <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum
+                            distinctio dire flow</p>
+                        <div class="social">
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-twitter-x"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                            <a href=""><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Team Member -->
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="team-member d-flex">
+                    <div class="member-img">
+                        <img src="{{assetBase}}/assets/img/person/person-f-8.webp" class="img-fluid" alt=""
+                            loading="lazy">
+                    </div>
+                    <div class="member-info flex-grow-1">
+                        <h4>Sarah Jhonson</h4>
+                        <span>Product Manager</span>
+                        <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod
+                            dolores exercitationem ut</p>
+                        <div class="social">
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-twitter-x"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                            <a href=""><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Team Member -->
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="team-member d-flex">
+                    <div class="member-img">
+                        <img src="{{assetBase}}/assets/img/person/person-m-6.webp" class="img-fluid" alt=""
+                            loading="lazy">
+                    </div>
+                    <div class="member-info flex-grow-1">
+                        <h4>William Anderson</h4>
+                        <span>CTO</span>
+                        <p>Illum minima ea autem doloremque ipsum quidem quas aspernatur modi ut praesentium vel
+                            tque sed facilis at qui</p>
+                        <div class="social">
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-twitter-x"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                            <a href=""><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Team Member -->
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="team-member d-flex">
+                    <div class="member-img">
+                        <img src="{{assetBase}}/assets/img/person/person-f-4.webp" class="img-fluid" alt=""
+                            loading="lazy">
+                    </div>
+                    <div class="member-info flex-grow-1">
+                        <h4>Amanda Jepson</h4>
+                        <span>Accountant</span>
+                        <p>Magni voluptatem accusamus assumenda cum nisi aut qui dolorem voluptate sed et veniam
+                            quasi quam consectetur</p>
+                        <div class="social">
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-twitter-x"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                            <a href=""><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Team Member -->
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="team-member d-flex">
+                    <div class="member-img">
+                        <img src="{{assetBase}}/assets/img/person/person-m-12.webp" class="img-fluid" alt=""
+                            loading="lazy">
+                    </div>
+                    <div class="member-info flex-grow-1">
+                        <h4>Brian Doe</h4>
+                        <span>Marketing</span>
+                        <p>Qui consequuntur quos accusamus magnam quo est molestiae eius laboriosam sunt
+                            doloribus quia impedit laborum velit</p>
+                        <div class="social">
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-twitter-x"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                            <a href=""><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Team Member -->
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="team-member d-flex">
+                    <div class="member-img">
+                        <img src="{{assetBase}}/assets/img/person/person-f-9.webp" class="img-fluid" alt=""
+                            loading="lazy">
+                    </div>
+                    <div class="member-info flex-grow-1">
+                        <h4>Josepha Palas</h4>
+                        <span>Operation</span>
+                        <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis
+                            fugit eligendi cupiditate vel</p>
+                        <div class="social">
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-twitter-x"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                            <a href=""><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Team Member --> --}}
+
+        </div>
+
+    </div>
+
+</section><!-- /Team Section -->

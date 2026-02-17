@@ -1,0 +1,80 @@
+<section class="about-us space-1">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-us-img">
+                    <img class="wow custom-anim-up" src="{{solvatechabout.[0].img}}" alt="image not found">
+                    <div class="about-us-video wow custom-anim-up">
+                        <img src="{{solvatechabout.[0].video}}" alt="video img">
+                        <a href="https://www.youtube.com/watch?v=Fvae8nxzVz4" class="play-btn" data-fancybox="gallery"
+                            data-caption="">
+                            <i class="play-icon unicon-play-filled-alt"></i>
+                            <span class="ripple"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="about-us-content">
+                    <div class="section-title-wrapper mb-45 mb-xs-40">
+                        <span class="wnr-section-subtitle mb-12 wow fadeInUp">{{solvatechabout.[0].subtitulo}}</span>
+                        <h2 class="wnr-section-title mb-25 mb-xs-20 wow fadeInUp" data-wow-delay=".3s">
+                            {{solvatechabout.[0].titulo}}</h2>
+                        <p class="wnr-section-content mb-0">{{{solvatechabout.[0].descripcion}}}</p>
+                    </div>
+
+                    {{#each solvatechaboutusfeature}}
+                    <div class="about-item-area">
+                        <div class="about-item">
+                            <div class="icon">
+                                <i class="{{icon}}"></i>
+                            </div>
+                            <div class="content">
+                                <h6 class="title-animation">{{titulo}}</h6>
+                                <p>{{{descripcion}}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+
+                    {{!-- falta decidir como manejar esta seccion, si consumiendo de un
+                    desplegable lo que queremos imprimir o colocandolo directamente como un campo mas en el crud --}}
+                    <div class="about-btn-box">
+                        <div class="founder-wrap">
+                            {{#each solvatechteamcards}}
+                            {{#if (eq this.id ../solvatechabout.[0].team_member)}}
+                            <div class="founder-thumbnail-wrap">
+                                <div class="founder-thumbnail"><img src="{{this.img}}"
+                                        alt="Founder Image"></div>
+                            </div>
+                            <div class="founder-content">
+                                <div class="founder-info">
+                                    <h5 class="founder-name">
+                                        <a href="javascript:;">{{this.titulo}}</a>
+                                    </h5>
+                                    <span class="founder-designation">{{this.puesto}}</span>
+                                </div>
+                            </div>
+                            {{/if}}
+                            {{/each}}
+
+                        </div>
+                        {{#each solvatechcontactcards}}
+                        {{#if (eq this.id ../solvatechabout.[0].contact_method)}}
+                        <a class="cta-btn" href="tel:{{this.descripcion}}">
+                            <div class="cta-btn-icon"><i class="icon-phone-ringing"></i></div>
+                            <div class="cta-btn-text">
+                                <small>Call Now</small>
+                                <span>{{this.descripcion}}</span>
+                            </div>
+                        </a>
+                        {{/if}}
+                        {{/each}}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- end .about-us-->

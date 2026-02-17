@@ -1,0 +1,89 @@
+{{> solvatech/header }}
+{{> solvatech/navbar }}
+
+{{> solvatech/sectionBanners }}
+
+<main>
+    <section class="space-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8">
+                    <div class="wnr-service-details-area">
+                        <div class="single-service-wrap">
+                            <div class="single-service-head">
+                                <div class="single-service-thumbnail"><img src="{{ service.img }}"
+                                        alt="Service Images"></div>
+                            </div>
+                            <div class="single-service-content">
+                                {{{ service.exp_larga }}}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end .wnr-blog-details-area-->
+                </div>
+
+                <div class="col-xl-4">
+                    <aside class="wnr-sidebar-area sidebar-sticky">
+
+                        <div class="widget-sidebar">
+                            <div class="widget-inner">
+                                <div class="widget-title">
+                                    <h3>Our Services</h3>
+                                </div>
+                                <div class="widget-services">
+                                    {{#if related_services}}
+                                    <ul class="widget-service-list">
+                                        {{#each related_services}}
+                                        <li>
+                                            <a href="/solvatechservicescards/{{id}}">
+                                                {{titulo}}
+                                                <span class="arrow-icon">
+                                                    <i class="unicon-arrow-up-right"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        {{/each}}
+                                    </ul>
+                                    {{/if}}
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="widget-sidebar widget-cta">
+                            <div class="widget-inner">
+                                <div class="widget-cta-contact">
+                                    <div class="widget-cta-title">
+                                        <h3>Need Help?</h3>
+                                    </div>
+                                    <div class="widget-cta-content">
+                                        <div class="widget-cta-btn"><a href="javascript:;"
+                                                class="wnr-btn btn-secondary"><span>Get Quote</span><i
+                                                    class="unicon-arrow-up-right"></i></a></div>
+                                        <p class="widget-cta-text">{{{solvatechcontact.[0].descripcion_formulario}}}</p>
+
+                                        {{#if solvatechcontactcards.[0]}}
+                                        <div class="widget-cta-icon">
+                                            <i class="{{solvatechcontactcards.[0].icon}}"></i>
+                                        </div>
+
+                                        <div class="cta-call-text-btn">
+                                            <a href="tel:{{solvatechcontactcards.[0].descripcion}}">
+                                                {{{solvatechcontactcards.[0].descripcion}}}
+                                            </a>
+                                            <span>{{solvatechcontactcards.[0].titulo}}</span>
+                                        </div>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section><!-- end .service details-->
+</main>
+
+{{> solvatech/footer }}

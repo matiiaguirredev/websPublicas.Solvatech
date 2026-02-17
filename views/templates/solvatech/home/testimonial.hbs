@@ -1,0 +1,54 @@
+<section class="space-1 wnr-bg01 pattern-bg01">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title-center mb-55 mb-xs-35">
+                    <span class="wnr-section-subtitle wow fadeInUp" data-wow-delay=".3s">{{
+                        solvatechtestimonial.[0].subtitulo }}</span>
+                    <h2 class="wnr-section-title mb-25 mb-xs-20 wow fadeInUp" data-wow-delay=".3s">{{
+                        solvatechtestimonial.[0].titulo }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="testi-activation slick-wrapper--10 wnr-slick-dots wnr-slick-arrow arrow-between">
+            {{#each solvatechtestimonialcards}}
+            <div class="slick-single-slide">
+                <div class="testimonail-card-2">
+                    <div class="testimonail-inner">
+                        <div class="testimonail-quote-rating">
+                            <div class="testimonail-rating">
+                                {{{renderStars stars}}}
+                            </div>
+                            <div class="testimonail-quote">
+                                <svg width="43" height="30" viewBox="0 0 43 30" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    data-inject-url="https://html.themegenix.com/beeko/assets/img/icons/quote.svg"
+                                    class="injectable">
+                                    <path
+                                        d="M3.07143 30H12.2857L18.4286 18V0H0V18H9.21429L3.07143 30ZM27.6429 30H36.8571L43 18V0H24.5714V18H33.7857L27.6429 30Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="testimonail-text">
+                            {{{descripcion}}}
+                        </div>
+
+                        <div class="testimonail-author-box">
+                            <div class="testimonail-author-media">
+                                <img src="{{img}}" alt="{{autor}}">
+                            </div>
+                            <div class="testimonail-author-content">
+                                <h6 class="author-name">{{autor}}</h6>
+                                <span class="author-designation">{{cargo}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+</section><!-- end .testimonial-->

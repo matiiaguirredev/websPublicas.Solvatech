@@ -1,0 +1,42 @@
+<section class="why-choose-us-section space-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title-wrapper mb-20">
+                    <span class="wnr-section-subtitle mb-12 wow fadeInUp">{{solvatechwhychoose.[0].subtitulo}}</span>
+                    <h2 class="wnr-section-title wow fadeInUp" data-wow-delay=".3s">{{solvatechwhychoose.[0].titulo}}
+                    </h2>
+                </div>
+                <div class="why-choose-us-list-box">
+                    <div class="why-choose-us-content">
+                        <p class="wow fadeInUp" data-wow-delay=".5s">{{{ solvatechwhychoose.[0].descripcion }}}</p>
+                    </div>
+
+                    <ul class="why-choose-us-list wow fadeInUp" data-wow-delay=".7s">
+                        {{#each solvatechwhichoosefeatures}}
+                        <li class="choose-us-list-item">
+                            <div class="choose-list-icon">
+                                <i class="{{icon}}"></i>
+                            </div>
+                            <div class="choose-us-list-text">
+                                <h4 class="choose-list-title">{{titulo}}</h4>
+                                <p class="choose-list-desc">{{{descripcion}}}</p>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="choose-us-video wow custom-anim-up">
+                    <img src="{{solvatechwhychoose.[0].media}}" alt="video img">
+                    <a href="https://www.youtube.com/watch?v=O6wTcrhkw4o" class="play-btn" data-fancybox="gallery"
+                        data-caption=""><i class="play-icon unicon-play-filled-alt"></i> <span
+                            class="border-pulse"></span> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- end .why choose-->

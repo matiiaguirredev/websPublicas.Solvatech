@@ -1,0 +1,147 @@
+<footer>
+    <div class="wnr-footer-area">
+        <div class="footer-widget-area">
+            <div class="footer-widget">
+                <div class="container">
+                    <div class="widget-wrap">
+                        <div class="row">
+                            <div class="col-lg-5 col-12">
+                                <div class="widget-item footer-about">
+                                    <div class="footer-logo m-b15"><img
+                                            src="{{assetBase}}/assets/images/logo/logo-white.png" class="img-fluid"
+                                            alt="logo"></a></div>
+
+                                    <div class="about-content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, earum dolor? In
+                                            odit nobis ut? Cupiditate nesciunt modi beatae iusto.</p>
+                                    </div>
+
+                                    <div class="footer-newsletter-wrap">
+                                        <form action="">
+                                            <div class="form-group">
+                                                <div class="newsletter">
+                                                    <input type="email" placeholder="enter your email address">
+                                                    <button><i class="bi bi-send"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="footer-social-wrap">
+                                        <ul class="footer-social">
+                                            <li><a href="javascript:;"><i class="icon-ui-facebook"></i></a></li>
+                                            <li><a href="javascript:;"><i class="icon-ui-twitter"></i></a></li>
+                                            <li><a href="javascript:;"><i class="icon-ui-linkedin"></i></a></li>
+                                            <li><a href="javascript:;"><i class="icon-ui-instagram"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-lg-2 col-12">
+                                <div class="widget-item">
+                                    <div class="widget-title-wrap">
+                                        <h6 class="widget-title">Useful Links</h6>
+                                    </div>
+                                    <div class="widget-list">
+                                        <ul class="list-item">
+                                            <li><a href="javascript:;">Home</a></li>
+                                            <li><a href="javascript:;">About</a></li>
+                                            <li><a href="javascript:;">Services</a></li>
+                                            <li><a href="javascript:;">Blog</a></li>
+                                            <li><a href="javascript:;">Contact Us</a></li>
+                                            <li><a href="javascript:;">Privacy Policy</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-lg-2 col-12">
+                                <div class="widget-item">
+                                    <div class="widget-title-wrap">
+                                        <h6 class="widget-title">Services</h6>
+                                    </div>
+                                    <div class="widget-list">
+                                        <ul class="list-item">
+                                            {{#each solvatechservicescards}}
+                                            <li><a href="javascript:;">{{titulo}}</a></li>
+                                            {{/each}}
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-lg-3 col-12">
+                                <div class="widget-item widget-last-item">
+                                    <div class="widget-title-wrap">
+                                        <h6 class="widget-title">Contact Us</h6>
+                                    </div>
+
+                                    <div class="widget-contact">
+                                        {{#each solvatechcontactcards}}
+                                        <div class="widget-info-item">
+                                            <div class="widget-icon">
+                                                <i class="{{icon}}"></i>
+                                            </div>
+                                            <div class="widget-content">
+                                                <span>{{titulo}}</span>
+                                                {{#if telefono}}
+                                                <div class="info"><a href="tel:{{telefono}}">{{telefono}}</a></div>
+                                                {{else if link}}
+                                                <div class="info"><a href="{{link}}" target="_blank">{{descripcion}}</a>
+                                                </div>
+                                                {{else}}
+                                                <div class="info">{{descripcion}}</div>
+                                                {{/if}}
+                                            </div>
+                                        </div>
+                                        {{/each}}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright-area">
+            <div class="container">
+                <div class="copyright-wrap">
+                    <div class="copyright">
+                        <p>
+                            Copyright <span id="year"></span> ©
+                            <a href="/">Solvatech</a> All Rights Reserved.
+                        </p>
+                    </div>
+
+                    <script>
+                        document.getElementById("year").textContent = new Date().getFullYear();
+                    </script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer><!-- end .footer-->
+
+<!-- JS here -->
+<script src="{{assetBase}}/assets/js/vendor/jquery-3.7.1.min.js"></script>
+<script src="{{assetBase}}/assets/js/plugins/waypoints.min.js"></script>
+<script src="{{assetBase}}/assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="{{assetBase}}/assets/js/plugins/counterup.min.js"></script>
+<script src="{{assetBase}}/assets/js/plugins/slick.min.js"></script>
+<script src="{{assetBase}}/assets/js/plugins/wow.min.js"></script>
+<script src="{{assetBase}}/assets/js/vendor/magnific-popup.min.js"></script>
+<script src="{{assetBase}}/assets/js/plugins/jarallax.min.js"></script>
+<script src="{{assetBase}}/assets/js/vendor/jquery.fancybox.min.js"></script>
+<script src="{{assetBase}}/assets/js/plugins/nice-select.min.js"></script>
+<script src="{{assetBase}}/assets/js/vendor/jquery.appear.min.js"></script>
+<script src="{{assetBase}}/assets/js/plugins/isotope.pkgd.min.js"></script>
+<script src="{{assetBase}}/assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+<script src="{{assetBase}}/assets/js/contactForm.js"></script>
+<script src="{{assetBase}}/assets/js/main.js"></script>
+<script src="{{assetBase}}/assets/js/theme-switcher.js"></script>
+</body>
+
+</html>
