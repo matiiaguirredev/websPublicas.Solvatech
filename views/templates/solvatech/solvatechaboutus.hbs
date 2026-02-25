@@ -1,16 +1,16 @@
 {{> solvatech/header }}
 {{> solvatech/navbar }}
 
-<div class="breadcrumb-wrapper cover-bg" style="background-image: url('{{assetBase}}/assets/images/breadcrumb/breadcrumb-bg.jpg')">
+<div class="breadcrumb-wrapper cover-bg" style="background-image: url('{{solvatechabout.[0].banner_img}}')">
     <div class="container">
         <div class="page-heading">
             <div class="breadcrumb-sub-title">
-                <h1 class="wow fadeInUp" data-wow-delay=".3s">About Us</h1>
+                <h1 class="wow fadeInUp" data-wow-delay=".3s">{{solvatechabout.[0].banner_title}}</h1>
             </div>
             <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
                 <li><a href="./"><i class="bi bi-house-door"></i>Home</a></li>
                 <li><i class="bi bi-chevron-right"></i></li>
-                <li>About Us</li>
+                <li>{{solvatechabout.[0].banner_title}}</li>
             </ul>
         </div>
     </div>

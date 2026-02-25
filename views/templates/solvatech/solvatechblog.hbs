@@ -1,180 +1,86 @@
 {{> solvatech/header }}
 {{> solvatech/navbar }}
 
-{{> solvatech/sectionBanners }}
+<div class="breadcrumb-wrapper cover-bg" style="background-image: url('{{solvatechblog.[0].banner_img}}')">
+    <div class="container">
+        <div class="page-heading">
+            <div class="breadcrumb-sub-title">
+                <h1 class="wow fadeInUp" data-wow-delay=".3s">{{solvatechblog.[0].banner_title}}</h1>
+            </div>
+            <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                <li><a href="./"><i class="bi bi-house-door"></i>Home</a></li>
+                <li><i class="bi bi-chevron-right"></i></li>
+                <li>{{solvatechblog.[0].banner_description}}</li>
+            </ul>
+        </div>
+    </div>
+</div><!-- end .breadcrumb-wrapper -->
 
 <main>
-    {{!-- <section class="space-1 wnr-bg01">
+    <section class="space-1 wnr-bg01">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="section-title-center mb-40 mb-xs-35">
-                        <span class="wnr-section-subtitle wow fadeInUp">Blog & Articles</span>
+                        <span class="wnr-section-subtitle wow fadeInUp">{{solvatechblog.[0].subtitulo}}</span>
                         <h2 class="wnr-section-title mb-25 mb-xs-20 title-animation wow fadeInUp" data-wow-delay=".3s">
-                            Latest News & Insights</h2>
+                            {{solvatechblog.[0].titulo}}</h2>
                     </div>
                 </div>
             </div>
+
             <div class="row">
+                {{#each solvatechblogcards}}
                 <div class="col-xxl-4 col-lg-4 col-md-6 m-b30">
                     <div class="blog-wrap">
                         <div class="item-inner">
+
                             <div class="media-box">
                                 <div class="media">
-                                    <a href="blog-details.html">
-                                        <img src="{{assetBase}}/assets/images/blog/blog-img01.jpg" alt="Image">
-                                        <img src="{{assetBase}}/assets/images/blog/blog-img01.jpg" alt="Image">
+                                    <a href="solvatechblogcards/{{id}}">
+                                        <img src="{{img}}" alt="{{titulo}}">
+                                        <img src="{{img}}" alt="{{titulo}}">
                                     </a>
                                 </div>
-                                <div class="date"><span>Jan 2025</span><strong>10</strong></div>
+
+                                {{!-- Fecha dinámica (mismo helper que ya usás) --}}
+                                {{{formatDate fecha "es"}}}
+
                             </div>
+
                             <div class="content-box">
                                 <ul class="post-meta">
-                                    <li><i class="unicon-user"></i>By Admin</li>
-                                    <li><i class="unicon-message-circle"></i>Comments (04)</li>
+                                    <li>
+                                        <i class="unicon-user"></i>
+                                        By
+                                        {{#each ../solvatechteamcards}}
+                                        {{#if (eq this.id ../autor)}}
+                                        {{this.titulo}}
+                                        {{/if}}
+                                        {{/each}}
+                                    </li>
+                                    <li><i class="unicon-message-circle"></i>Comments (0)</li>
                                 </ul>
-                                <h4 class="title"><a href="blog-details.html">Building smart business grow solution for
-                                        you</a></h4>
-                                <a href="blog-details.html"
-                                    class="wnr-btn btn-secondary btn-link btn-underlined read-more"><span>Read
-                                        More</span> <i class="unicon-arrow-up-right"></i></a>
+
+                                <h4 class="title">
+                                    <a href="solvatechblogcards/{{id}}">{{titulo}}</a>
+                                </h4>
+
+                                <a href="solvatechblogcards/{{id}}"
+                                    class="wnr-btn btn-secondary btn-link btn-underlined read-more">
+                                    <span>Read More</span>
+                                    <i class="unicon-arrow-up-right"></i>
+                                </a>
                             </div>
+
                         </div>
                     </div>
-                </div><!-- end .col-xxl-4 col-lg-4 col-md-6 -->
-                <div class="col-xxl-4 col-lg-4 col-md-6 m-b30">
-                    <div class="blog-wrap">
-                        <div class="item-inner">
-                            <div class="media-box">
-                                <div class="media">
-                                    <a href="blog-details.html">
-                                        <img src="{{assetBase}}/assets/images/blog/blog-img02.jpg" alt="Image">
-                                        <img src="{{assetBase}}/assets/images/blog/blog-img02.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <div class="date"><span>Dec 2024</span><strong>16</strong></div>
-                            </div>
-                            <div class="content-box">
-                                <ul class="post-meta">
-                                    <li><i class="unicon-user"></i>By Admin</li>
-                                    <li><i class="unicon-message-circle"></i>Comments (04)</li>
-                                </ul>
-                                <h4 class="title"><a href="blog-details.html">To Really Get to Know a Place, You Have to
-                                        Walk It</a></h4>
-                                <a href="blog-details.html"
-                                    class="wnr-btn btn-secondary btn-link btn-underlined read-more"><span>Read
-                                        More</span> <i class="unicon-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- end .col-xxl-4 col-lg-4 col-md-6 -->
-                <div class="col-xxl-4 col-lg-4 col-md-6 m-b30">
-                    <div class="blog-wrap">
-                        <div class="item-inner">
-                            <div class="media-box">
-                                <div class="media">
-                                    <a href="blog-details.html">
-                                        <img src="{{assetBase}}/assets/images/blog/blog-img04.jpg" alt="Image">
-                                        <img src="{{assetBase}}/assets/images/blog/blog-img04.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <div class="date"><span>July 2024</span><strong>13</strong></div>
-                            </div>
-                            <div class="content-box">
-                                <ul class="post-meta">
-                                    <li><i class="unicon-user"></i>By Admin</li>
-                                    <li><i class="unicon-message-circle"></i>Comments (1)</li>
-                                </ul>
-                                <h4 class="title"><a href="blog-details.html">Solution your business grow solution for
-                                        you</a></h4>
-                                <a href="blog-details.html"
-                                    class="wnr-btn btn-secondary btn-link btn-underlined read-more"><span>Read
-                                        More</span> <i class="unicon-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- end .col-xxl-4 col-lg-4 col-md-6 -->
-                <div class="col-xxl-4 col-lg-4 col-md-6 m-b30">
-                    <div class="blog-wrap">
-                        <div class="item-inner">
-                            <div class="media-box">
-                                <div class="media">
-                                    <a href="blog-details.html">
-                                        <img src="{{assetBase}}/assets/images/blog/blog-img05.jpg" alt="Image">
-                                        <img src="{{assetBase}}/assets/images/blog/blog-img05.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <div class="date"><span>Jan 2025</span><strong>20</strong></div>
-                            </div>
-                            <div class="content-box">
-                                <ul class="post-meta">
-                                    <li><i class="unicon-user"></i>By Admin</li>
-                                    <li><i class="unicon-message-circle"></i>Comments (1)</li>
-                                </ul>
-                                <h4 class="title"><a href="blog-details.html">How Literacy Created Civilisation, Part I:
-                                        In the Beginning.</a></h4>
-                                <a href="blog-details.html"
-                                    class="wnr-btn btn-secondary btn-link btn-underlined read-more"><span>Read
-                                        More</span> <i class="unicon-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- end .col-xxl-4 col-lg-4 col-md-6 -->
-                <div class="col-xxl-4 col-lg-4 col-md-6 m-b30">
-                    <div class="blog-wrap">
-                        <div class="item-inner">
-                            <div class="media-box">
-                                <div class="media">
-                                    <a href="blog-details.html">
-                                        <img src="{{assetBase}}/assets/images/blog/blog-img05.jpg" alt="Image">
-                                        <img src="{{assetBase}}/assets/images/blog/blog-img05.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <div class="date"><span>Feb 2025</span><strong>22</strong></div>
-                            </div>
-                            <div class="content-box">
-                                <ul class="post-meta">
-                                    <li><i class="unicon-user"></i>By Admin</li>
-                                    <li><i class="unicon-message-circle"></i>Comments (62)</li>
-                                </ul>
-                                <h4 class="title"><a href="blog-details.html">Let’s understand the different types of
-                                        data backups</a></h4>
-                                <a href="blog-details.html"
-                                    class="wnr-btn btn-secondary btn-link btn-underlined read-more"><span>Read
-                                        More</span> <i class="unicon-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- end .col-xxl-4 col-lg-4 col-md-6 -->
-                <div class="col-xxl-4 col-lg-4 col-md-6 m-b30">
-                    <div class="blog-wrap">
-                        <div class="item-inner">
-                            <div class="media-box">
-                                <div class="media">
-                                    <a href="blog-details.html">
-                                        <img src="{{assetBase}}/assets/images/blog/blog-img01.jpg" alt="Image">
-                                        <img src="{{assetBase}}/assets/images/blog/blog-img01.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <div class="date"><span>Jan 2025</span><strong>10</strong></div>
-                            </div>
-                            <div class="content-box">
-                                <ul class="post-meta">
-                                    <li><i class="unicon-user"></i>By Admin</li>
-                                    <li><i class="unicon-message-circle"></i>Comments (04)</li>
-                                </ul>
-                                <h4 class="title"><a href="blog-details.html">Building smart business grow solution for
-                                        you</a></h4>
-                                <a href="blog-details.html"
-                                    class="wnr-btn btn-secondary btn-link btn-underlined read-more"><span>Read
-                                        More</span> <i class="unicon-arrow-up-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- end .col-xxl-4 col-lg-4 col-md-6 -->
+                </div>
+                {{/each}}
             </div>
+
         </div>
-    </section><!-- end .blog--> --}}
+    </section><!-- end .blog-->
 </main>
 
 {{> solvatech/footer }}

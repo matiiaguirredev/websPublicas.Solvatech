@@ -179,6 +179,8 @@ Handlebars.registerHelper('getUrlSettingData', function (key, options) {
 // 🔹 Helper que construye dinámicamente el <head> SEO
 Handlebars.registerHelper('renderHeadMeta', function (options) {
     try {
+        // console.log("renderHeadMeta options:", options);
+        
 
         const host = options?.data?.root?.host;
         if (!host) return '';
@@ -206,6 +208,7 @@ Handlebars.registerHelper('renderHeadMeta', function (options) {
         /* ===============================
             BASIC META
         =============================== */
+        // html += `<base href="${host}">\n`;
 
         if (title) {
             html += `<title>${title}</title>\n`;
@@ -297,7 +300,33 @@ f.parentNode.insertBefore(j,f);
     }
 });
 
+// necesito que me crees un helper para detectar un active de menú, que compare la url actual con la url de cada sección, y me devuelva "active" si coincide, para poder marcar el menú activo en el navbar. El helper se podría llamar "isActiveMenu" y recibiría la url de la sección como argumento. Ejemplo de uso: <a href="/about" class="{{isActiveMenu '/about'}}">About</a>
+Handlebars.registerHelper('isActiveMenu', function (href, options) {
+    try {
+        // console.log("debug de ahora nuevo", options);
+        // eliminar / al currenturl
 
+        const currentUrl = options.data.root.currentPath || '';
+        // console.log("currentUrl:", currentUrl, "href:", href);
+
+        // sino tiene / href, agregarlo para comparar
+        const normalizedhref = href.startsWith('/') ? href : `/${href}`;
+
+        if (currentUrl === normalizedhref) {
+            return 'active';
+        }
+
+        // verificar si href se contiene completo dentro del currenturl y retornar active
+        if (currentUrl.includes(normalizedhref) && normalizedhref !== '/') {
+            return 'active';
+        }
+
+        return '';
+    } catch (err) {
+        console.error('isActiveMenu helper error:', err);
+        return '';
+    }
+});
 
 /* ---------------- Rutas ---------------- */
 app.use('/', publicRoutes(renderPage, TEMPLATE_ALIASES));

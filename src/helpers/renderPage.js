@@ -22,6 +22,7 @@ function renderPage(req, res, templateAlias, viewName, urlSettingId = '', data =
     const VIEWS_BASE = path.join(ROOT, 'views');
     const TEMPLATE_ALIASES = fs.readdirSync(path.join(VIEWS_BASE, 'templates'));
     const host = req.headers.host || 'unknown-host';
+    const currentPath = req.path || '/';
 
     if (!TEMPLATE_ALIASES.includes(templateAlias)) {
         return res
@@ -137,7 +138,8 @@ function renderPage(req, res, templateAlias, viewName, urlSettingId = '', data =
         titulo: `Template: ${templateAlias} — ${clean}`,
         ...globalData,
         ...data,
-        host
+        host,
+        currentPath
     });
 }
 

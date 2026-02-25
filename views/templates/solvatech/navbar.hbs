@@ -124,37 +124,6 @@
 <!-- end .header-search-->
 
 <header class="header_area site__header">
-    <div class="header-topbar">
-        <div class="container">
-            <div class="header-topbar-inner">
-                <div class="topbar-left">
-                    <ul class="contact-list">
-                        <li>
-                            <i class="icon bi bi-envelope"></i>
-                            <a href="mailto:info@example.com">info@example.com</a>
-                        </li>
-                        <li>
-                            <i class="icon bi bi-clock"></i>
-                            Opening Hours: 10:00 - 19:00
-                        </li>
-                    </ul>
-                </div>
-                <div class="topbar-right">
-                    <ul class="top-link">
-                        <li><a href="javascript:;">About</a></li>
-                        <li><a href="javascript:;">Blog</a></li>
-                        <li><a href="javascript:;">Services</a></li>
-                    </ul>
-                    <ul class="top-social social-media icon-bg-transp">
-                        <li><a href="javascript:;"><i class="icon icon-ui-facebook"></i></a></li>
-                        <li><a href="javascript:;"><i class="icon icon-ui-twitter"></i></a></li>
-                        <li><a href="javascript:;"><i class="icon icon-ui-instagram"></i></a></li>
-                        <li><a href="javascript:;"><i class="icon icon-ui-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="header_wrapper" id="header-sticky">
         <div class="header-wrapper container">
             <div class="header-logo">
@@ -175,37 +144,13 @@
                         </div>
                         <span class="menu-close-btn"><i class="bi bi-x-lg"></i></span>
                     </div>
-                    <ul class="main-nav">
-                        <li class="active"><a href="/">Home</a></li>
-                        <li><a href="/aboutus">About</a></li>
-                        <li class="menu-item-has-children">
-                            <a href="#" class="drop-down">Services</a>
-                            <i class="bi bi-chevron-down dropdown-icon"></i>
-                            <ul class="sub-menu">
-                                <li><a href="/solvatechservices">Services</a></li>
-                                <li><a href="service-details.html">Service Details</a></li>
-                            </ul>
-                        </li>
 
-                        <li class="menu-item-has-children">
-                            <a href="#" class="drop-down">Pages</a>
-                            <i class="bi bi-chevron-down dropdown-icon"></i>
-                            <ul class="sub-menu">
-                                <li><a href="/aboutus">About Us</a></li>
-                                <li><a href="/team">Our Team</a></li>
-                                <li><a href="/portfolio">Projects</a></li>
-                                <li><a href="/pricing">Pricing Plan</a></li>
-                            </ul>
+                    <ul class="main-nav">
+                        {{#each filteredSections}}
+                        <li class="{{isActiveMenu this.alias}}">
+                            <a href="{{this.alias}}">{{this.name}}</a>
                         </li>
-                        <li class="menu-item-has-children">
-                            <a href="#" class="drop-down">Blog</a>
-                            <i class="bi bi-chevron-down dropdown-icon"></i>
-                            <ul class="sub-menu">
-                                <li><a href="/solvatechblog">Blog</a></li>
-                                <li><a href="blog-details.html">Blog Details</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/solvatechcontact">Contact Us</a></li>
+                        {{/each}}
                     </ul>
 
                 </div>
@@ -216,7 +161,8 @@
                 <div class="header-cta">
                     <a class="header-cta-btn" href="tel:+12025550918">
                         <div class="cta-icon"><i class="icon-phone-ringing"></i></div>
-                        <div class="cta-btn-text"><span>{{solvatechcontactcards.[0].descripcion}}</span><small>{{ solvatechcontact.[0].titulo_formulario }}</small></div>
+                        <div class="cta-btn-text"><span>{{solvatechcontactcards.[0].descripcion}}</span><small>{{
+                                solvatechcontact.[0].titulo_formulario }}</small></div>
                     </a>
                 </div>
                 <div class="offcanvas-btn mobile-menu-btn"><i class="bi bi-list sidebar-toggle-button"></i></div>

@@ -26,7 +26,23 @@ module.exports = function (renderPage, TEMPLATE_ALIASES) {
                 return res.status(404).send(`Sección "${templateOnUse.home}" no registrada.`);
             }
 
+            // filtrar globaldata sections segun templateonuse.sections y agregar en un array el nombre y el alias de cada seccion, que el alias este dentro de templateonuse.sections
+            const filteredSections = Object.keys(globalData.sections || {}).filter(alias => {
+                return templateOnUse.sections && templateOnUse.sections.includes(alias);
+            }).map(alias => {
+                // elimina del nombre de la seccion el nombre del template
+                const name = globalData.sections[alias].name.replace(templateOnUse.name, '').trim();
+                // verificar si el alias es = al template.home, cambiar el alias por "/"
+                const aliasPath = (alias === templateOnUse.home) ? '/' : '/' + alias;
+
+                return {
+                    name: name,
+                    alias: aliasPath
+                };
+            });
+
             let data = {};
+            data.filteredSections = filteredSections;
             const cruds = seccionOnUse.cruds ? seccionOnUse.cruds.split(',').map(c => c.trim()) : [];
 
             const fetchDataPromises = cruds.map(async (crud) => {
@@ -41,7 +57,7 @@ module.exports = function (renderPage, TEMPLATE_ALIASES) {
 
             await Promise.all(fetchDataPromises);
             // console.log("globalData:", globalData.st_urlSettingData[host]);
-            // console.log("data", data);
+            // console.log("data", filteredSections);
             return renderPage(req, res, st_templates, 'index', st_urlSetting, data, globalData);
         } catch (error) {
             console.error(`Error en ruta /:`, error.stack);
@@ -112,7 +128,23 @@ module.exports = function (renderPage, TEMPLATE_ALIASES) {
             const seccionOnUse = globalData.sections ? globalData.sections[alias] : null;
             if (!seccionOnUse) return res.status(404).send(`Sección "${alias}" no registrada.`);
 
+            // filtrar globaldata sections segun templateonuse.sections y agregar en un array el nombre y el alias de cada seccion, que el alias este dentro de templateonuse.sections
+            const filteredSections = Object.keys(globalData.sections || {}).filter(alias => {
+                return templateOnUse.sections && templateOnUse.sections.includes(alias);
+            }).map(alias => {
+                // elimina del nombre de la seccion el nombre del template
+                const name = globalData.sections[alias].name.replace(templateOnUse.name, '').trim();
+                // verificar si el alias es = al template.home, cambiar el alias por "/"
+                const aliasPath = (alias === templateOnUse.home) ? '/' : '/' + alias;
+
+                return {
+                    name: name,
+                    alias: aliasPath
+                };
+            });
+
             let data = {};
+            data.filteredSections = filteredSections;
             const cruds = seccionOnUse.cruds ? seccionOnUse.cruds.split(',').map(c => c.trim()) : [];
 
             // // 🔹 Obtener todos los datasets de la sección
@@ -121,7 +153,7 @@ module.exports = function (renderPage, TEMPLATE_ALIASES) {
             //     const checkData = Array.isArray(response?.data) ? response.data : [];
             //     if (response.ok && checkData.length > 0) data[crud] = checkData;
             // });
-            
+
             // 🔹 Obtener datasets filtrados (por ejemplo, solo solvatechcontact)
             const fetchDataPromises = cruds.map(async (crud) => {
                 // 👇 Ajustá el nombre del CRUD que querés inspeccionar
@@ -135,45 +167,22 @@ module.exports = function (renderPage, TEMPLATE_ALIASES) {
                 const response = await apiClient.getData(crud, { st_urlSetting });
                 const checkData = Array.isArray(response?.data) ? response.data : [];
 
-                if (response.ok && checkData.length > 0) {
-                    data[crud] = checkData;
-                    console.log(`✅ CRUD ${crud} cargado correctamente (${checkData.length} registros)`);
+                if (response.ok) {
+                    data[crud] = checkData; // puede ser array vacío y está bien
+
+                    if (checkData.length > 0) {
+                        // console.log(`✅ CRUD ${crud} cargado correctamente (${checkData.length} registros)`);
+                    } else {
+                        // console.log(`⚠️ CRUD ${crud} cargado pero sin registros`);
+                    }
+
                 } else {
-                    console.log(`⚠️ CRUD ${crud} vacío o sin respuesta válida`);
+                    // console.log(`❌ Error al cargar CRUD ${crud}`, response?.status || '', response?.error || '');
                 }
             });
 
             await Promise.all(fetchDataPromises);
             // console.log("data", data);
-
-            // 🔹 --- BANNERS GENÉRICOS (igual que en /:crud/:id) ---
-            const templateAlias = req.query.st_template || st_templates;
-            const bannersCrud = `${templateAlias}sectionbanners`;
-
-            const bannersRes = await apiClient.getData(bannersCrud, { st_urlSetting });
-
-            // --- BANNERS GENÉRICOS (solo si está declarado en la sección) ---
-            if (cruds.includes(`${st_templates}sectionbanners`)) {
-                const bannersCrud = `${st_templates}sectionbanners`;
-                const bannersRes = await apiClient.getData(bannersCrud, { st_urlSetting });
-
-                if (bannersRes.ok && Array.isArray(bannersRes.data)) {
-                    const allBanners = bannersRes.data;
-                    const posibles = [alias + '-details', alias];
-
-                    const banner = allBanners.find(b => {
-                        const secciones = (b.sections || '').split(',').map(s => s.trim().toLowerCase());
-                        return secciones.some(s =>
-                            posibles.some(p => s.includes(p.toLowerCase()) || p.includes(s))
-                        );
-                    });
-
-                    if (banner) {
-                        data.sectionBanner = banner;
-                        // console.log(`✅ Banner encontrado en ${bannersCrud}:`, banner.titulo);
-                    }
-                }
-            }
 
             return renderPage(req, res, st_templates, alias, st_urlSetting, data, globalData);
         } catch (error) {
@@ -198,20 +207,37 @@ module.exports = function (renderPage, TEMPLATE_ALIASES) {
             if (!templateOnUse) return res.status(404).send(`Template "${st_templates}" no registrado.`);
 
 
-            let data = {}; // dataset final que se envía al render
+            // filtrar globaldata sections segun templateonuse.sections y agregar en un array el nombre y el alias de cada seccion, que el alias este dentro de templateonuse.sections
+            const filteredSections = Object.keys(globalData.sections || {}).filter(alias => {
+                return templateOnUse.sections && templateOnUse.sections.includes(alias);
+            }).map(alias => {
+                // elimina del nombre de la seccion el nombre del template
+                const name = globalData.sections[alias].name.replace(templateOnUse.name, '').trim();
+                // verificar si el alias es = al template.home, cambiar el alias por "/"
+                const aliasPath = (alias === templateOnUse.home) ? '/' : '/' + alias;
+
+                return {
+                    name: name,
+                    alias: aliasPath
+                };
+            });
+
+            let data = {};
+            data.filteredSections = filteredSections;
 
             // 1️⃣ Consulta principal — el CRUD actual (ej: solvatechblogcards/1)
             const mainResponse = await apiClient.getData(`${crud}/${id}`, { st_urlSetting });
-            if (mainResponse.ok) {
-                data[crud] = mainResponse.data;
-
-                
-                //Esto es un alias opcional que solo usamos para resolver un problema particular de solvatechservicescards.
-                /* Porque: solvatechservicescards se usa como ARRAY en:footer sidebar sections
-                Pero EN EL DETALLE, también necesitabas usarlo como OBJETO. 
-                */
-                data.service = mainResponse.data;
+            if (!mainResponse.ok || !mainResponse.data) {
+                return res.status(404).send(`No existe registro para ${crud}/${id}`);
             }
+            data[crud] = mainResponse.data;
+
+            //Esto es un alias opcional que solo usamos para resolver un problema particular de solvatechservicescards.
+            /* Porque: solvatechservicescards se usa como ARRAY en:footer sidebar sections
+            Pero EN EL DETALLE, también necesitabas usarlo como OBJETO. 
+            */
+            data.service = mainResponse.data;
+
 
             // 2️⃣ Consultas relacionadas — definidas en relatedData.js
             const relatedEntries = relatedConfig[crud] || [];
@@ -220,56 +246,34 @@ module.exports = function (renderPage, TEMPLATE_ALIASES) {
                 const relatedPromises = relatedEntries.map(async (relation) => {
                     const relatedResponse = await apiClient.getData(relation.alias, { st_urlSetting });
 
-                    if (relatedResponse.ok && Array.isArray(relatedResponse.data)) {
-                        const targetKey = relation.key || relation.alias;
+                    const targetKey = relation.key || relation.alias;
 
-                        // 🔹 Si la relación apunta al mismo CRUD (por ejemplo: posts recientes)
+                    if (relatedResponse.ok) {
+                        const arr = Array.isArray(relatedResponse.data)
+                            ? relatedResponse.data
+                            : [];
+
+                        // 🔹 Si la relación apunta al mismo CRUD (ej: posts recientes)
                         if (relation.alias === crud) {
-                            data[targetKey] = relatedResponse.data.filter(
+                            data[targetKey] = arr.filter(
                                 (item) => String(item.id) !== String(id)
                             );
                         } else {
-                            // 🔹 Si la relación es otro CRUD (por ejemplo: categorías o servicios)
-                            data[targetKey] = relatedResponse.data;
+                            // 🔹 Si la relación es otro CRUD
+                            data[targetKey] = arr;
                         }
+
+                    } else {
+                        // 🔹 Si la API falla, mantenemos estructura consistente
+                        data[targetKey] = [];
+                        console.log(`❌ Error al cargar relación ${relation.alias}`);
                     }
                 });
 
                 await Promise.all(relatedPromises);
             }
 
-            console.log("data", data);
-
-            // --- BANNERS GENÉRICOS (para todos los templates) ---
-            const templateAlias = req.query.st_template || data.template_alias || 'solvatech';
-            const bannersCrud = `${templateAlias}sectionbanners`;
-
-            const bannersRes = await apiClient.getData(bannersCrud, { st_urlSetting });
-
-            if (bannersRes.ok && Array.isArray(bannersRes.data)) {
-                const allBanners = bannersRes.data;
-
-                const crudBase = crud.replace(/cards$/, '');
-                const posibles = [
-                    crud + '-details',
-                    crudBase,
-                    crud
-                ];
-
-                const banner = allBanners.find(b => {
-                    const secciones = (b.sections || '').split(',').map(s => s.trim());
-                    return secciones.some(s => posibles.includes(s));
-                });
-
-                if (banner) {
-                    data.sectionBanner = banner;
-                    console.log(`✅ Banner encontrado en ${bannersCrud}:`, banner.titulo);
-                } else {
-                    console.log(`⚠️ No se encontró banner aplicable en ${bannersCrud}`);
-                }
-            } else {
-                console.warn(`⚠️ Sin banners disponibles en ${bannersCrud}`);
-            }
+            // console.log("data", data);
 
             return renderPage(req, res, st_templates, crud + "-details", st_urlSetting, data, globalData);
         } catch (error) {
@@ -329,40 +333,6 @@ module.exports = function (renderPage, TEMPLATE_ALIASES) {
             }
 
             console.log("data", data);
-
-            // --- DEBUG: BANNERS ---
-            const bannersRes = await apiClient.getData('solvatechsectionbanners', { st_urlSetting });
-            console.log('🔹[Banner Debug] st_urlSetting:', st_urlSetting);
-            console.log('🔹[Banner Debug] crud actual:', crud);
-
-            if (bannersRes.ok && Array.isArray(bannersRes.data)) {
-                const allBanners = bannersRes.data;
-                console.log('✅ [Banner Debug] banners encontrados:', allBanners.length);
-
-                const crudBase = crud.replace(/cards$/, '');
-                const posibles = [
-                    crud + '-details',
-                    crudBase,
-                    crud
-                ];
-
-                console.log('🔹[Banner Debug] posibles matches:', posibles);
-
-                const banner = allBanners.find(b => {
-                    const secciones = (b.sections || '').split(',').map(s => s.trim());
-                    return secciones.some(s => posibles.includes(s));
-                });
-
-                if (banner) {
-                    console.log('✅ [Banner Debug] banner encontrado:', banner);
-                    data.sectionBanner = banner;
-                } else {
-                    console.warn('⚠️ [Banner Debug] ningún banner coincidió con', posibles);
-                }
-            } else {
-                console.warn('⚠️ [Banner Debug] no se obtuvieron banners');
-            }
-
 
             return renderPage(req, res, st_templates, crud + "-details", st_urlSetting, data, globalData);
         } catch (error) {
