@@ -237,7 +237,8 @@ module.exports = function (renderPage, TEMPLATE_ALIASES) {
             Pero EN EL DETALLE, también necesitabas usarlo como OBJETO. 
             */
             data.service = mainResponse.data;
-
+            // console.log("data crud", data[crud]);
+            
 
             // 2️⃣ Consultas relacionadas — definidas en relatedData.js
             const relatedEntries = relatedConfig[crud] || [];
